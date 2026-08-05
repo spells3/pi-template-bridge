@@ -1,0 +1,87 @@
+---
+name: template-catalog
+version: 1.0.0
+description: >
+  Proactively suggest and install specialist agent templates from claude-code-templates
+  (421 agents, 28 categories). TRIGGER: When a task needs a specialist agent NOT
+  available in current skills. Examples: blockchain, game dev, data science,
+  Kubernetes, database optimization, Rust/Go experts, video processing.
+---
+
+# Template Catalog — 421 Specialist Agents
+
+## How It Works
+
+1. You see a task that would benefit from a specialist not in current skills
+2. Suggest to user: "For this task there's a {name} template — install it?"
+3. Install: `npx claude-code-templates@latest --agent {category}/{name} --yes`
+4. Agent goes to `.claude/agents/{name}.md` in current project
+5. Use the agent, optionally remove after
+
+## Check Existing Skills FIRST
+
+Before suggesting a template, verify it is not already covered by:
+- Superpowers skills (brainstorming, TDD, debugging, code-review, etc.)
+- Beads (task tracking)
+- Project-specific skills/agents
+- Other installed Pi packages
+
+## Available Categories
+
+| Category | Count | Sample Agents |
+|----------|-------|---------------|
+| accessibility | 1 | accessibility-tester |
+| ai-specialists | 8 | ai-ethics-advisor, hackathon-ai-strategist, llm-architect |
+| api-graphql | 8 | api-architect, api-designer, graphql-architect |
+| blockchain-web3 | 4 | blockchain-developer, smart-contract-auditor, smart-contract-specialist |
+| business-marketing | 21 | business-analyst, communication-excellence-coach, competitive-analyst |
+| data-ai | 40 | adr-generator, ai-engineer, amplitude-experiment-implementation |
+| database | 11 | database-admin, database-administrator, database-architect |
+| deep-research-team | 16 | academic-researcher, agent-overview, competitive-intelligence-analyst |
+| development-team | 17 | backend-architect, backend-developer, cli-ui-designer |
+| development-tools | 34 | accessibility-tester, architect-reviewer, ascii-ui-mockup-generator |
+| devops-infrastructure | 39 | apify-integration-expert, arm-migration, azure-iac-exporter |
+| documentation | 11 | api-documenter, arch, changelog-generator |
+| expert-advisors | 52 | 4.1-Beast, address-comments, agent-expert |
+| ffmpeg-clip-team | 8 | audio-mixer, audio-quality-controller, podcast-content-analyzer |
+| finance | 5 | bettoredge-value-finder, fintech-engineer, payment-integration |
+| game-development | 5 | 3d-artist, game-designer, game-developer |
+| git | 3 | commit-guardian, git-flow-manager, git-workflow-manager |
+| mcp-dev-team | 8 | mcp-deployment-orchestrator, mcp-developer, mcp-integration-engineer |
+| modernization | 3 | architecture-modernizer, cloud-migration-specialist, legacy-modernizer |
+| obsidian-ops-team | 7 | connection-agent, content-curator, metadata-agent |
+| ocr-extraction-team | 7 | document-structure-analyzer, markdown-syntax-formatter, ocr-grammar-fixer |
+| performance-testing | 5 | load-testing-specialist, performance-engineer, react-performance-optimization |
+| podcast-creator-team | 11 | academic-research-synthesizer, comprehensive-researcher, episode-orchestrator |
+| programming-languages | 50 | angular-architect, c-pro, c-sharp-pro |
+| realtime | 2 | supabase-realtime-optimizer, websocket-engineer |
+| security | 24 | ad-security-reviewer, ai-agent-audit-specialist, api-security-audit |
+| ui-analysis | 5 | screenshot-business-analyzer, screenshot-interaction-analyzer, screenshot-reviewer |
+| web-tools | 16 | accessibility, aem-frontend-specialist, electron-angular-native |
+
+## Install Examples
+
+```bash
+# Security audit
+npx claude-code-templates@latest --agent security/security-auditor --yes
+
+# Kubernetes specialist
+npx claude-code-templates@latest --agent devops-infrastructure/kubernetes-specialist --yes
+
+# Rust expert
+npx claude-code-templates@latest --agent programming-languages/rust-pro --yes
+
+# Interactive browser (all categories)
+npx claude-code-templates@latest
+```
+
+Or use the `/browse-templates` Pi command.
+
+## Source
+
+Repository: https://github.com/davila7/claude-code-templates
+Always fetches latest version — no stale copies.
+
+## Refreshing This Catalog
+
+To sync after upstream changes, follow the README instructions in pi-template-bridge.
