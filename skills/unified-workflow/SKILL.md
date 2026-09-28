@@ -112,6 +112,10 @@ Before claiming ANYTHING done, read superpowers:verification-before-completion S
 
 Evidence before claims, always.
 
+## Context7: Fresh Docs (mandatory)
+
+Before implementing with an external library, framework, or SDK, read the `context7-docs` skill and use `resolve-library-id` followed by `query-docs` for current API details. Do not rely on memory for library-specific syntax or configuration.
+
 ## When to Pull External Templates
 
 Check template-bridge:template-catalog when task needs a specialist NOT in:
